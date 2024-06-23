@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 청첩장</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>우리 결혼합니다!</h1>
+    </header>
+    <section id="invitation">
+        <p>사랑하는 가족과 친구들을 초대합니다.</p>
+        <p>날짜: 2024년 11월 30일</p>
+        <p>장소: 경기도 수원시 호텔리츠 컨벤션웨딩</p>
+    </section>
+    <footer>
+        <p>연락처: 010-1234-5678</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
