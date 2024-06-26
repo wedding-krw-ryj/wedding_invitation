@@ -2927,3 +2927,56 @@ h2 {
 .close-modal-btn:hover {
   background-color: #d0d0d0;
 }
+
+.section5 {
+  background-color: #f9f9f9;
+}
+
+.section5-title {
+  margin-top: 1em;
+  color: #333;
+  text-shadow: none;
+}
+
+.section5-main {
+  font-family: DancingScript-b;
+  line-height: 1.5em;
+  font-size: 2rem;
+}
+
+.section5-sub {
+  font-family: NanumMyeongjo-r;
+  line-height: 1.5em;
+  font-size: 1.3rem;
+}
+
+.section5-table {
+  font-family: NanumMyeongjo-r;
+  line-height: 1.5em;
+  font-size: 1.3rem;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.section5-table tr td{
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+}
+
+.section5-table tr .sun{
+  color: red;
+}
+
+.section5-table tr .check{
+  color: white;
+  background-color: chocolate;
+  border-radius: 50px;
+}
+
+.section5-table tr:first-child td{
+  padding-top: 2em;
+}
+
+.section5-table tr:last-child td{
+  padding-bottom: 2em;
+}

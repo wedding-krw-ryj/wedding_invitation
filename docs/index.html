@@ -103,7 +103,17 @@
             }
         });
 
+		    $(document).ready(function() {
+            let date = new Date(2024, 11, 30);
+            let currentDate = new Date();
 
+            let result = date - currentDate;
+            let misec = 24 * 60 * 60 * 1000;
+
+            result = (result <= 0)? 0 : (parseInt(result / misec) + 1);
+
+            $("#d-day").html(result);
+        });
 
 
     </script>
@@ -173,18 +183,12 @@
         <div class="ww-section bg-light" id="events">
             <div class="container ww-wedding-event">
                 <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">초대합니다</h2>
-                    <div class="col text-center mb-5">
-<!--
-                        <h6 style="font-family: 'Noto Serif KR', serif;">
-                            1463<br>
-                            (만난지 4년+1일 되는날 결혼 = 1463일)
-                        </h6>
--->
-                    </div>
+        <div class="wow fadeInUp section5 inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <br/>
+        </div>
                 <div class="row">
                     <div class="col-md-7 col-sm-12">
                         <div class="my-3">
-                            <div class="h4">웨딩 본식</div>
                             <ul>
                                 <li>
                                     <i class="text-muted fas fa-map-marker-alt"></i>
@@ -196,32 +200,6 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-md-5 col-sm-12">
-                        <div class="my-3">
-                            <img alt="Wedding Party" class="img-fluid" src="images/wedding-party.png"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-7 col-sm-12">
-                        <div class="my-3">
-                            <div class="h4">식사</div>
-                            <ul>
-                                <li>
-                                    <i class="text-muted fas fa-map-marker-alt "></i>
-                                    <span class="pl-2 text-muted">경기 수원 인계동 호텔리츠컨벤션웨딩 6층-7층</span><br>
-                                    <span class="pl-2 text-muted">※ 축의금 담당자에게 확인 필요</span>
-                                </li>
-                                <li class="pt-2">
-                                    <i class="text-muted far fa-calendar-alt "></i>
-                                    <span class="pl-2 text-muted">2024년 11월 30일, 12:00PM - 2:00PM</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-5 col-sm-12">
-                        <div class="my-3"><img alt="Reception" class="img-fluid" src="images/reception.png"/></div>
                     </div>
                 </div>
             </div>
@@ -371,42 +349,6 @@
     -->
         <div class="ww-section ww-rsvp-detail" id="map">
             <div class="container">
-                <div class="col text-center">
-                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">오시는 길</h2>
-                    <div>
-                        <h5 style="font-family: 'Noto Serif KR', serif;">호텔리츠컨벤션웨딩</h5>
-                        <h6 style="font-family: 'Noto Serif KR', serif;">(경기도 수원시 팔달구 권광로134번길 46)</h6>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <div class="my-3 text-center">
-                            <a href="tmap://search?name=호텔리츠컨벤션웨딩">
-                                <img alt="t-map" class="map-icon" id="t-map"
-                                     src="images/map/t-map.png"/>
-                            </a>
-                            <a href="https://naver.me/FdsGQuoX">
-                                <img alt="naver-map" class="map-icon" id="naver-map"
-                                     src="images/map/naver-map.png"/>
-                            </a>
-                            <a href="https://kko.to/rzrhbWCr_z">
-                                <img alt="kakao-map" class="map-icon" id="kakao-map"
-                                     src="images/map/kakao-map.png"/>
-                            </a>
-                            <a href="https://maps.app.goo.gl/UYYwxp16tJJkPjnd6">
-                                <img alt="google-map" class="map-icon" id="google-map"
-                                     src="images/map/google-map.png"/>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <label style="font-family: 'Noto Serif KR', serif; font-size: 15px;">
-                                수원시청역 2번 출구 도보 5분
-                            </label>
-                        </div>
-                        <div class="my-3">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.5355452380954!2d127.03104397785633!3d37.25872577211982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b436743e39b9f%3A0x2b780a971545dd3!2z7Zi47YWU66as7Lig7Luo67Kk7IWY7Juo65Sp!5e0!3m2!1sko!2skr!4v1719368941256!5m2!1sko!2skr" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-                        </div>
 
 <!--연락처 & 계좌 번호-->
                 <div class="wow fadeInUp">
@@ -562,7 +504,128 @@
                     </div>
                     <br/><br/>
                 </div>
-                
+			<div class="wow fadeInUp inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <br/>
+			    <div class="form-group">
+                    <div class="col-md-12">
+					    <div class="col text-center">
+							<h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">오시는 길</h2>
+							<div>
+								<h5 style="font-family: 'Noto Serif KR', serif;">호텔리츠컨벤션웨딩</h5>
+								<h6 style="font-family: 'Noto Serif KR', serif;">(경기도 수원시 팔달구 권광로134번길 46)</h6>
+							</div>
+						</div>
+                        <div class="my-3 text-center">
+                            <a href="tmap://search?name=호텔리츠컨벤션웨딩">
+                                <img alt="t-map" class="map-icon" id="t-map"
+                                     src="images/map/t-map.png"/>
+                            </a>
+                            <a href="https://naver.me/FdsGQuoX">
+                                <img alt="naver-map" class="map-icon" id="naver-map"
+                                     src="images/map/naver-map.png"/>
+                            </a>
+                            <a href="https://kko.to/rzrhbWCr_z">
+                                <img alt="kakao-map" class="map-icon" id="kakao-map"
+                                     src="images/map/kakao-map.png"/>
+                            </a>
+                            <a href="https://maps.app.goo.gl/UYYwxp16tJJkPjnd6">
+                                <img alt="google-map" class="map-icon" id="google-map"
+                                     src="images/map/google-map.png"/>
+                            </a>
+                        </div>
+                        <div class="col text-center">
+                            <label style="font-family: 'Noto Serif KR', serif; font-size: 15px;">
+                                수원시청역 2번 출구 도보 5분
+                            </label>
+                        </div>
+                        <div class="my-3">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.5355452380954!2d127.03104397785633!3d37.25872577211982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b436743e39b9f%3A0x2b780a971545dd3!2z7Zi47YWU66as7Lig7Luo67Kk7IWY7Juo65Sp!5e0!3m2!1sko!2skr!4v1719368941256!5m2!1sko!2skr" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+						<div id="map" class="wow fadeInUp" style="width:100%;height:400px;"></div>
+
+						<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c77e8e3478791e199b67ff5f3a684b10"></script>
+						<script>
+							var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+								mapOption = {
+									center: new kakao.maps.LatLng(37.2587258, 127.0336189), // 지도의 중심좌표
+									level: 3 // 지도의 확대 레벨
+								};
+
+							var map = new kakao.maps.Map(mapContainer, mapOption);
+							var markerPosition  = new kakao.maps.LatLng(37.2587258, 127.0336189);
+
+							// 마커를 생성합니다
+							var marker = new kakao.maps.Marker({
+								position: markerPosition
+							});
+
+							// 마커가 지도 위에 표시되도록 설정합니다
+							marker.setMap(map);
+						</script>
+					</div>
+				</div>
+			<div class="wow fadeInUp  inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <br/>
+            <p class="section5-title section5-main text-center">예식 일시</p>
+            <p class="section5-title section5-sub text-center" style="margin-top: 0;">11월 30일 · 토요일 · 오후 12:00</p>
+            <table class="wow fadeInUp section5-title section5-table text-center">
+                <tr>
+                    <td class="sun">S</td>
+                    <td>M</td>
+                    <td>T</td>
+                    <td>W</td>
+                    <td>T</td>
+                    <td>F</td>
+                    <td>S</td>
+                </tr>
+                <tr>
+                    <td class="sun"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td class="sun">3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td class="sun">10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="sun">17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td class="sun">24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td class="check">30</td>
+                </tr>
+            </table>
+            <p class="wow fadeInUp section5-title section5-sub text-center" style="margin-top:1.3em">련우 ❤️ 연주 결혼식이 <span id="d-day"></span>일 남았습니다.</p>
+            <br/><br/>
             </div>
         </div>
 <!--
@@ -599,10 +662,15 @@
     </div>
 </div>
 -->
-
     <!-- Go to TOP dutton-->
     <div class="bottom_right"><i class="fa fa-arrow-up fa-2x" id="go-to-top"></i>
     </div>
+	<footer class="pt-5 text-muted text-center text-small section8">
+		<br/><br/>
+		<p class="mb-1">© 2024-11-30 Ryenwoo, Yeonju</p>
+		<br/><br/>
+		<br/><br/>
+	</footer>
 
 </body>
 </html>
