@@ -21,14 +21,10 @@
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
     <link href="css/ekko-lightbox.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300"
-          rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300" rel="stylesheet">
     <!--선엄문-->
+	<script src="https://code.jquery.com/jquery-2.2.1.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/ekko-lightbox.min.js"></script>
@@ -108,6 +104,19 @@
             }
         });
 
+			var wow = new WOW(
+				{
+					boxClass:     'wow',      // animated element css class (default is wow)
+					animateClass: 'animated', // animation css class (default is animated)
+					offset:       80,          // distance to the element when triggering the animation (default is 0)
+					mobile:       true,       // trigger animations on mobile devices (default is true)
+					live:         true,       // act on asynchronously loaded content (default is true)
+					scrollContainer: null,    // optional scroll container selector, otherwise use window,
+					resetAnimation: true,     // reset animation on end (default is true)
+				}
+			);
+			wow.init();
+		
 		    $(document).ready(function() {
             let date = new Date(2024, 11, 30);
             let currentDate = new Date();
@@ -256,102 +265,6 @@
                 </div>
             </div>
         </div>
-<!--
-       <div class="ww-section parallax-window  text-white" data-parallax="scroll" data-image-src="images/gift/gift-background.jpg" id="gifts">
-            <div class="ww-gift-section">
-                <div class="container">
-                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">Gift for our
-                        wedding</h2>
-                    <div class="col text-center mb-5">
-                        <h6 style="font-family: 'Noto Serif KR', serif;">
-                            저희 부부가 앞으로 살아나갈 일상에<br>
-                            오래도록 특별한 기억을 선물하고 싶으신가요?<br>
-                            그렇다면 고민하는 대신 아래 목록을 참고해 주세요.<br>
-                            저희가 필요로 하는 물건들을 정리해 두었습니다.<br>
-                            애정어린 마음으로 보내주신 선물은<br>
-                            가까이 두어 오래도록 아껴 쓰고,<br>
-                            소중하게 간직하겠습니다.
-                            <br><br>
-                            (아래 선물버튼을 눌러 신랑, 신부에게 예약메시지를 보내세요!)
-                        </h6>
-                    </div>
-                    <div class="ww-gift">
-                        <div class="gift-columns">
-                            <div class="gift">
-                                <img alt="와인셀러" class="img-fluid gift-img gift-selected" src="images/gift/wineceller.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('https://smartstore.naver.com/dhk00840/products/4311205513')">
-                                        <i class="fa fa-search"></i></button>
-                                    <button class="btn btn-default gift-btn gift-send" data-name="와인셀러"
-                                            onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                            <div class="gift">
-                                <img alt="전동클렌저" class="img-fluid gift-img gift-selected"
-                                     src="images/gift/philips_clenser.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('https://www.philips.co.kr/c-p/BSC111_06/visapure-mini-facial-cleanser')">
-                                        <i class="fa fa-search"></i></button>
-                                    <button class="btn btn-default gift-btn gift-send" data-name="전동클렌저"
-                                            onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                            <div class="gift">
-                                <img alt="드라이기" class="img-fluid gift-img gift-selected" src="images/gift/dyson.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('https://www.kr.dyson.com/products/hair-care/dyson-supersonic-hair-dryer')">
-                                        <i class="fa fa-search"></i></button>
-                                    <button  class="btn btn-default gift-btn gift-send" data-name="드라이기"
-                                             onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                            <div class="gift">
-                                <img alt="믹서기" class="img-fluid gift-img gift-selected" src="images/gift/blender.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('http://jenniferoom.co.kr/product/detail.html?product_no=85&cate_no=24&display_group=1')">
-                                        <i class="fa fa-search"></i></button>
-                                    <button  class="btn btn-default gift-btn gift-send" data-name="믹서기"
-                                             onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                            <div class="gift">
-                                <img alt="레고" class="img-fluid gift-img gift-selected" src="images/gift/lego.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('https://shop.lego.com/ko-KR/product/10232')"><i
-                                            class="fa fa-search"></i></button>
-                                    <button class="btn btn-default gift-btn gift-send" data-name="레고"
-                                            
-                                             onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                            <div class="gift">
-                                <img alt="전기레인지" class="img-fluid gift-img gift-selected" src="images/gift/range.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('https://www.lge.co.kr/lgekor/product/kitchen/electricRange/productDetail.do?cateId=4410&prdId=EPRD.333447')">
-                                        <i class="fa fa-search"></i></button>
-                                    <button class="btn btn-default gift-btn gift-send" data-name="전기레인지"
-                                            
-                                             onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    -->
         <div class="ww-section ww-rsvp-detail" id="map">
             <div class="container">
 
@@ -450,17 +363,17 @@
                                 <div class="modal-body section7-modal section7-modal-content">
                                     <div class="row">
                                         <span class="label">신&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;랑:</span>
-                                        <span class="bank-account" id="account1">신한은행 111111111111 (홍길동)</span>
+                                        <span class="bank-account" id="account1">신한은행 111111111111 (강련우)</span>
                                         <button class="copy-btn" onclick="copyToClipboard('account1')">복사하기</button>
                                     </div>
                                     <div class="row">
                                         <span class="label">신랑 아버지:</span>
-                                        <span class="bank-account" id="account2">신한은행 111111111111 (홍길동)</span>
+                                        <span class="bank-account" id="account2">신한은행 111111111111 (강상구)</span>
                                         <button class="copy-btn" onclick="copyToClipboard('account2')">복사하기</button>
                                     </div>
                                     <div class="row">
                                         <span class="label">신랑 어머니:</span>
-                                        <span class="bank-account" id="account3">신한은행 111111111111 (홍길동)</span>
+                                        <span class="bank-account" id="account3">신한은행 111111111111 (신순남)</span>
                                         <button class="copy-btn" onclick="copyToClipboard('account3')">복사하기</button>
                                     </div>
                                 </div>
@@ -479,7 +392,7 @@
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title section7-modal section7-modal-title" id="brideLabel">신랑측 계좌번호 보기</h5>
+                                    <h5 class="modal-title section7-modal section7-modal-title" id="brideLabel">신부측 계좌번호 보기</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -487,17 +400,17 @@
                                 <div class="modal-body section7-modal section7-modal-content">
                                     <div class="row">
                                         <span class="label">신&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;부:</span>
-                                        <span class="bank-account" id="account1">신한은행 111111111111 (홍길동)</span>
+                                        <span class="bank-account" id="account1">신한은행 111111111111 (유연주)</span>
                                         <button class="copy-btn" onclick="copyToClipboard('account1')">복사하기</button>
                                     </div>
                                     <div class="row">
                                         <span class="label">신부 아버지:</span>
-                                        <span class="bank-account" id="account2">신한은행 111111111111 (홍길동)</span>
+                                        <span class="bank-account" id="account2">신한은행 111111111111 (유중경)</span>
                                         <button class="copy-btn" onclick="copyToClipboard('account2')">복사하기</button>
                                     </div>
                                     <div class="row">
                                         <span class="label">신부 어머니:</span>
-                                        <span class="bank-account" id="account3">신한은행 111111111111 (홍길동)</span>
+                                        <span class="bank-account" id="account3">신한은행 111111111111 (임민희)</span>
                                         <button class="copy-btn" onclick="copyToClipboard('account3')">복사하기</button>
                                     </div>
                                 </div>
@@ -543,21 +456,14 @@
                                 수원시청역 2번 출구 도보 5분
                             </label>
                         </div>
-						<!--
-                        <div class="my-3">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.5355452380954!2d127.03104397785633!3d37.25872577211982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b436743e39b9f%3A0x2b780a971545dd3!2z7Zi47YWU66as7Lig7Luo67Kk7IWY7Juo65Sp!5e0!3m2!1sko!2skr!4v1719368941256!5m2!1sko!2skr" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-                        </div>
-						-->
 						<!-- * 카카오맵 - 지도퍼가기 -->
 						<!-- 1. 지도 노드 -->
 						<div id="daumRoughmapContainer1719414228312" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%"></div>
-
 						<!--
 							2. 설치 스크립트
 							* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
 						-->
 						<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-
 						<!-- 3. 실행 스크립트 -->
 						<script charset="UTF-8">
 							new daum.roughmap.Lander({
@@ -650,40 +556,6 @@
 				<br/><br/>
             </div>
         </div>
-<!--
-        <div class="ww-section bg-light" id="comment">
-            <div class="ww-photo-gallery">
-                <div class="container">
-                    <div class="col text-center">
-                        <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">축하메시지</h2><br>
-                        <div id="comments"></div>
-                        <br>
-                        <div class="row">
-                            <div class="col text-center"><form action="https://github.com/AndersonChoi/wedding-card/blob/master/README.md">
-                                <button class="btn btn-primary btn-submit" type="submit">메시지 남기러 가기</button></form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-</div>
-<footer></footer>
--->
-
-
-
-<!--
-<div class="bottom_left">
-    <audio id="player" src="mus.mp3"></audio>
-    <div>
-        <i class="fa fa-music fa-2x" onclick="document.getElementById('player').play()"></i>
-    </div>
-</div>
--->
     <!-- Go to TOP dutton-->
     <div class="bottom_right"><i class="fa fa-arrow-up fa-2x" id="go-to-top"></i>
     </div>
@@ -693,6 +565,8 @@
 		<br/><br/>
 		<br/><br/>
 	</footer>
-
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
