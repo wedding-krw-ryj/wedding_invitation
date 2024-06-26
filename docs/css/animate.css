@@ -2970,7 +2970,11 @@ h2 {
 .section5-table tr .check{
   color: white;
   background-color: chocolate;
-  border-radius: 50px;
+  border-radius: 30px; /* Adjust the radius to make it more circular */
+  line-height: 30px;
+  text-align: center;
+  width: 60px; /* Add width to adjust the size */
+  height: 30px; /* Add height to adjust the size */
 }
 
 .section5-table tr:first-child td{
