@@ -8,11 +8,11 @@
     <meta property="og:title" content="강련우 ❤️ 유연주 결혼식에 초대합니다." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://wedding-krw-ryj.github.io/wedding_invitation/images/main-background.jpg" />
-    <meta property="og:image:width" content="552" />
+    <meta property="og:image:width" content="device-width" />
     <meta property="og:image:height" content="800" />
     <meta property="og:description" content="사랑으로 물들어가는 계절, 연인에서 부부라는 이름으로 평생을 함께 하고자 합니다." />
     <meta name="format-detection" content="telephone=no" />
-	<title>강련우, 유연주의 모바일 청첩장</title>
+    <title>강련우, 유연주의 모바일 청첩장</title>
     <link href="images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
     <link href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
     <link href="images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -22,8 +22,6 @@
     <link href="styles/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300" rel="stylesheet">
     <!--선엄문-->
-	<script src="https://code.jquery.com/jquery-2.2.1.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/ekko-lightbox.min.js"></script>
@@ -49,22 +47,6 @@
     <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.js" type="text/javascript"></script>
     <script type="text/javascript">
-        function sendMail() {
-
-            (function () {
-                emailjs.init("user_yjLL5xG0A3kkOCH5BGIDh");
-                emailjs.send("wedding-mail", "gift_send", {
-                    name: $("#sender-name").value,
-                    gift: $("#gift-name").text(),
-                    message: $("#sender-message").value
-                }).then(function (response) {
-                    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-                }, function (err) {
-                    console.log("FAILED. error=", err);
-                });
-            })();
-        }
-
         function findGetParameter(parameterName) {
             var result = null,
                 tmp = [];
@@ -104,20 +86,20 @@
             }
         });
 
-			var wow = new WOW(
-				{
-					boxClass:     'wow',      // animated element css class (default is wow)
-					animateClass: 'animated', // animation css class (default is animated)
-					offset:       80,          // distance to the element when triggering the animation (default is 0)
-					mobile:       true,       // trigger animations on mobile devices (default is true)
-					live:         true,       // act on asynchronously loaded content (default is true)
-					scrollContainer: null,    // optional scroll container selector, otherwise use window,
-					resetAnimation: true,     // reset animation on end (default is true)
-				}
-			);
-			wow.init();
-		
-		    $(document).ready(function() {
+	var wow = new WOW(
+		{
+			boxClass:     'wow',      // animated element css class (default is wow)
+			animateClass: 'animated', // animation css class (default is animated)
+			offset:       80,          // distance to the element when triggering the animation (default is 0)
+			mobile:       true,       // trigger animations on mobile devices (default is true)
+			live:         true,       // act on asynchronously loaded content (default is true)
+			scrollContainer: null,    // optional scroll container selector, otherwise use window,
+			resetAnimation: true,     // reset animation on end (default is true)
+		}
+	);
+	wow.init();
+
+    	$(document).ready(function() {
             let date = new Date(2024, 11, 30);
             let currentDate = new Date();
 
@@ -423,15 +405,15 @@
                 </div>
 			<div class="wow fadeInUp inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
             <br/>
-			    <div class="form-group">
+		<div class="form-group">
                     <div class="col-md-12">
-					    <div class="col text-center">
-							<h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">오시는 길</h2>
-							<div>
-								<h5 style="font-family: 'Noto Serif KR', serif;">호텔리츠컨벤션웨딩</h5>
-								<h6 style="font-family: 'Noto Serif KR', serif;">(경기도 수원시 팔달구 권광로134번길 46)</h6>
-							</div>
-						</div>
+		    	<div class="col text-center">
+				<h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">오시는 길</h2>
+				<div>
+					<h5 style="font-family: 'Noto Serif KR', serif;">호텔리츠컨벤션웨딩</h5>
+					<h6 style="font-family: 'Noto Serif KR', serif;">(경기도 수원시 팔달구 권광로134번길 46)</h6>
+				</div>
+			</div>
                         <div class="my-3 text-center">
                             <a href="tmap://search?name=호텔리츠컨벤션웨딩">
                                 <img alt="t-map" class="map-icon" id="t-map"
@@ -455,24 +437,24 @@
                                 수원시청역 2번 출구 도보 5분
                             </label>
                         </div>
-						<!-- * 카카오맵 - 지도퍼가기 -->
-						<!-- 1. 지도 노드 -->
-						<div id="daumRoughmapContainer1719414228312" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%"></div>
-						<!--
-							2. 설치 스크립트
-							* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-						-->
-						<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-						<!-- 3. 실행 스크립트 -->
-						<script charset="UTF-8">
-							new daum.roughmap.Lander({
-								"timestamp" : "1719414228312",
-								"key" : "2jtmd",
-								"mapHeight" : "360"
-							}).render();
-						</script>
-					</div>
-				</div>
+			<!-- * 카카오맵 - 지도퍼가기 -->
+			<!-- 1. 지도 노드 -->
+			<div id="daumRoughmapContainer1719414228312" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%"></div>
+			<!--
+				2. 설치 스크립트
+				* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+			-->
+			<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+			<!-- 3. 실행 스크립트 -->
+			<script charset="UTF-8">
+				new daum.roughmap.Lander({
+					"timestamp" : "1719414228312",
+					"key" : "2jtmd",
+					"mapHeight" : "360"
+				}).render();
+			</script>
+		</div>
+	</div>
 			<div class="wow fadeInUp  inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 				<br/>
 				<p class="section5-title section5-main text-center">예식 일시</p>
