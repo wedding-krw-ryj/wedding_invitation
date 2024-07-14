@@ -578,6 +578,25 @@ pre code {
     margin-left: auto;
 }
 
+.gallery_container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+	display: flex;
+	justify-content: center;
+}
+
+.gallery_child {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -25px 0 0 -25px;
+}
+
 @media (min-width: 576px) {
     .container {
         max-width: 540px;

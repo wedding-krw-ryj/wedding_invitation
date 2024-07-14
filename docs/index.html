@@ -339,175 +339,174 @@ body { display: flex; justify-content: center; align-items: center; min-height: 
 					</tr>
 				</table>
 				<p class="wow fadeInUp section5-title section5-sub text-center " style="margin-top:1.3em">련우 ❤️ 연주 결혼식이 <span id="d-day"></span>일 남았습니다.</p>
+				</br></br>
         </div>
 
 <!-- 추가 -->
 
-
-
-<div class="gallery">
-    <!-- 메인 슬라이드 -->
-    <div class="list">
-        <div class="inner">
-        <ul class="swiper-wrapper slide_list">
-            <li class="swiper-slide">
-				<img src="images/pic1.jpg" alt="Image 1" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-            <li class="swiper-slide">
-				<img src="images/pic2.jpg" alt="Image 2" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-            <li class="swiper-slide">
-				<img src="images/pic3.jpg" alt="Image 3" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-            <li class="swiper-slide">
-				<img src="images/pic4.jpg" alt="Image 4" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>            
-			<li class="swiper-slide">
-				<img src="images/pic5.jpg" alt="Image 5" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-            <li class="swiper-slide">
-				<img src="images/pic6.jpg" alt="Image 6" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-			<li class="swiper-slide">
-				<img src="images/pic7.jpg" alt="Image 7" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-			<li class="swiper-slide">
-				<img src="images/pic8.jpg" alt="Image 8" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-        </ul>
-        <span class="btn btn_prev">이전</span>
-        <span class="btn btn_next">다음</span>
-        </div>
-    </div>
-
-    <!-- 갤러리 썸네일 -->
-    <div class="thumbs">
-        <ul class="swiper-wrapper slide_list">
-            <li class="swiper-slide">
-				<img src="images/pic1.jpg" alt="thumbs 1" class="gallery-image" style="max-width: auto; height: 100%; object-fit: cover;">
-			</li>
-            <li class="swiper-slide">
-				<img src="images/pic2.jpg" alt="thumbs 2" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-            <li class="swiper-slide">
-				<img src="images/pic3.jpg" alt="thumbs 3" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-            <li class="swiper-slide">
-				<img src="images/pic4.jpg" alt="thumbs 4" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>            
-			<li class="swiper-slide">
-				<img src="images/pic5.jpg" alt="thumbs 5" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-            <li class="swiper-slide">
-				<img src="images/pic6.jpg" alt="thumbs 6" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-			<li class="swiper-slide">
-				<img src="images/pic7.jpg" alt="thumbs 7" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-			<li class="swiper-slide">
-				<img src="images/pic8.jpg" alt="thumbs 8" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-			</li>
-        </ul>
-    </div>
-</div>
-
-<div class='bigPictureWrapper'>
-	<div class='bigPicture'></div>	   
-</div>
-
-<script>
-$(window).on('load', function () {
-    gallery();
-});
-
-function gallery() {
-    let list = undefined;
-    let thumbs = undefined;
-    const slideNum = $('.gallery .list .swiper-slide').length; // 슬라이드 총 개수
-    let slideInx = 0; // 현재 슬라이드 index
-    let viewNum = 0;
-    let loopChk = true;
-
-    // 디바이스 체크
-    let oldWChk = window.innerWidth > 767 ? 'pc' : 'mo';
-    sliderAct();
-
-    $(window).on('resize', function () {
-        const newWChk = window.innerWidth > 767 ? 'pc' : 'mo';
-        if (newWChk !== oldWChk) {
-            oldWChk = newWChk;
-            sliderAct();
-        }
-    });
-
-    // 슬라이드 실행
-    function sliderAct() {
-        // 슬라이드 초기화
-        [list, thumbs].forEach(item => item && item.destroy());
-
-        // slidesPerView 옵션 설정
-        viewNum = oldWChk === 'pc' ? 5 : 3;
-        // loop 옵션 체크
-        loopChk = slideNum > viewNum;
-
-        // 갤러리 썸네일
-        thumbs = new Swiper(".gallery .thumbs", {
-            spaceBetween: 10,
-            slidesPerView: viewNum,
-            loopedSlides: viewNum,
-            loop: loopChk,
-            watchSlidesVisibility: true,
-            watchSlidesProgress: true,
-        });
-
-        // 메인 슬라이드
-        list = new Swiper(".gallery .list .inner", {
-            initialSlide: slideInx,
-            loopedSlides: viewNum,
-            loop: loopChk,
-            effect: "fade",
-            navigation: {
-                nextEl: ".gallery .btn_next",
-                prevEl: ".gallery .btn_prev",
-            },
-            on: {
-                activeIndexChange: function () {
-                    slideInx = this.realIndex; // 현재 슬라이드 index 갱신
-                }
-            },
-            thumbs: {
-                swiper: thumbs,
-            },
-        });
-    }
-}
-
-$(document).ready(function () {
-	$(document).on("click", ".gallery-image", function(){
-		var path = $(this).attr('src')
-		showImage(path);
-	});//end click event
-	
-	function showImage(fileCallPath){
-		$(".bigPictureWrapper").css("display","flex").show();
-		$(".bigPicture").html("<img src='"+fileCallPath+"' >");
-	}//end fileCallPath
-	
-	$(".bigPictureWrapper").on("click", function(){
-		$(this).hide();
-	});
-});
-
-</script>
-
 		
-<!--		
+	
         <div class="ww-section" id="gallery">
-            <div class="ww-photo-gallery">
-                <div class="container">
-                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">포토 갤러리</h2>
+		<div class="container"><h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">포토 갤러리</h2></div>
+                <div class="gallery_container">
+                    
+						<div class="gallery h1 text-center pb-3 ww-title">
+							<!-- 메인 슬라이드 -->
+							<div class="list">
+								<div class="inner">
+								<ul class="swiper-wrapper slide_list">
+									<li class="swiper-slide">
+										<img src="images/pic1.jpg" alt="Image 1" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic2.jpg" alt="Image 2" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic3.jpg" alt="Image 3" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic4.jpg" alt="Image 4" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>            
+									<li class="swiper-slide">
+										<img src="images/pic5.jpg" alt="Image 5" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic6.jpg" alt="Image 6" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic7.jpg" alt="Image 7" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic8.jpg" alt="Image 8" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+								</ul>
+								<span class="btn btn_prev">이전</span>
+								<span class="btn btn_next">다음</span>
+								</div>
+							</div>
+
+							<!-- 갤러리 썸네일 -->
+							<div class="thumbs">
+								<ul class="swiper-wrapper slide_list">
+									<li class="swiper-slide">
+										<img src="images/pic1.jpg" alt="thumbs 1" class="gallery-image" style="max-width: auto; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic2.jpg" alt="thumbs 2" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic3.jpg" alt="thumbs 3" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic4.jpg" alt="thumbs 4" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>            
+									<li class="swiper-slide">
+										<img src="images/pic5.jpg" alt="thumbs 5" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic6.jpg" alt="thumbs 6" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic7.jpg" alt="thumbs 7" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+									<li class="swiper-slide">
+										<img src="images/pic8.jpg" alt="thumbs 8" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class='bigPictureWrapper'>
+							<div class='bigPicture'></div>	   
+						</div>
+
+						<script>
+						$(window).on('load', function () {
+							gallery();
+						});
+
+						function gallery() {
+							let list = undefined;
+							let thumbs = undefined;
+							const slideNum = $('.gallery .list .swiper-slide').length; // 슬라이드 총 개수
+							let slideInx = 0; // 현재 슬라이드 index
+							let viewNum = 0;
+							let loopChk = true;
+
+							// 디바이스 체크
+							let oldWChk = window.innerWidth > 767 ? 'pc' : 'mo';
+							sliderAct();
+
+							$(window).on('resize', function () {
+								const newWChk = window.innerWidth > 767 ? 'pc' : 'mo';
+								if (newWChk !== oldWChk) {
+									oldWChk = newWChk;
+									sliderAct();
+								}
+							});
+
+							// 슬라이드 실행
+							function sliderAct() {
+								// 슬라이드 초기화
+								[list, thumbs].forEach(item => item && item.destroy());
+
+								// slidesPerView 옵션 설정
+								viewNum = oldWChk === 'pc' ? 5 : 3;
+								// loop 옵션 체크
+								loopChk = slideNum > viewNum;
+
+								// 갤러리 썸네일
+								thumbs = new Swiper(".gallery .thumbs", {
+									spaceBetween: 10,
+									slidesPerView: viewNum,
+									loopedSlides: viewNum,
+									loop: loopChk,
+									watchSlidesVisibility: true,
+									watchSlidesProgress: true,
+								});
+
+								// 메인 슬라이드
+								list = new Swiper(".gallery .list .inner", {
+									initialSlide: slideInx,
+									loopedSlides: viewNum,
+									loop: loopChk,
+									effect: "fade",
+									navigation: {
+										nextEl: ".gallery .btn_next",
+										prevEl: ".gallery .btn_prev",
+									},
+									on: {
+										activeIndexChange: function () {
+											slideInx = this.realIndex; // 현재 슬라이드 index 갱신
+										}
+									},
+									thumbs: {
+										swiper: thumbs,
+									},
+								});
+							}
+						}
+
+						$(document).ready(function () {
+							$(document).on("click", ".gallery-image", function(){
+								var path = $(this).attr('src')
+								showImage(path);
+							});//end click event
+							
+							function showImage(fileCallPath){
+								$(".bigPictureWrapper").css("display","flex").show();
+								$(".bigPicture").html("<img src='"+fileCallPath+"' >");
+							}//end fileCallPath
+							
+							$(".bigPictureWrapper").on("click", function(){
+								$(this).hide();
+							});
+						});
+
+						</script>
+<!--
                     <div class="ww-gallery">
-                        <div class="card-columns">
+					<div class="card-columns">
                             <div class="card" data-groups="[&quot;party&quot;,&quot;wedding&quot;]">
                                 <a data-gallery="ww-gallery" data-toggle="lightbox">
                                     <img alt="Gallery Pic 1" class="img-fluid" src="images/pic1.jpg"/>
@@ -551,11 +550,11 @@ $(document).ready(function () {
                             </div>
                         </div>
                     </div>
+-->
                 </div>
-            </div>
         </div>
 		
-		-->
+
 		
         <div class="ww-section">
             <div class="container">
