@@ -402,38 +402,44 @@
                         신랑측 계좌번호 보기
                     </button>
                     <!-- Modal -->
-                    <div class="modal fade" id="groom" tabindex="-1" aria-labelledby="groom" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title section7-modal section7-modal-title" id="groomLabel">신랑측 계좌번호 보기</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body section7-modal section7-modal-content">
-                                    <div class="row">
-                                        <span class="label">신&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;랑:</span>
-                                        <span class="bank-account" id="account1">신한 111111111111 (강련우)</span>
-                                        <button class="copy-btn" onclick="copyToClipboard('account1')">복사하기</button>
-                                    </div>
-                                    <div class="row">
-                                        <span class="label">신랑 아버지:</span>
-                                        <span class="bank-account" id="account2">신한 111111111111 (강상구)</span>
-                                        <button class="copy-btn" onclick="copyToClipboard('account2')">복사하기</button>
-                                    </div>
-                                    <div class="row">
-                                        <span class="label">신랑 어머니:</span>
-                                        <span class="bank-account" id="account3">신한 111111111111 (신순남)</span>
-                                        <button class="copy-btn" onclick="copyToClipboard('account3')">복사하기</button>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+					<div class="modal fade" id="groom" tabindex="-1" aria-labelledby="groom" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title section7-modal section7-modal-title" id="groomLabel">신랑측 계좌번호 보기</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body section7-modal section7-modal-content">
+									<div class="row">
+										<span class="label">신&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;랑</span>
+										<div class="bank-info">
+											<span class="bank-account" id="account1">100210668238 케이뱅크 (강련우)</span>
+											<button class="copy-btn" onclick="copyToClipboard('account1')">복사하기</button>
+										</div>
+									</div>
+									<div class="row">
+										<span class="label">신랑아버지</span>
+										<div class="bank-info">
+											<span class="bank-account" id="account2">3020107311501 농협은행 (강상구)</span>
+											<button class="copy-btn" onclick="copyToClipboard('account2')">복사하기</button>
+										</div>
+									</div>
+									<div class="row">
+										<span class="label">신랑어머니</span>
+										<div class="bank-info">
+											<span class="bank-account" id="account3">3520458333063 농협은행 (신순남)</span>
+											<button class="copy-btn" onclick="copyToClipboard('account3')">복사하기</button>
+										</div>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+								</div>
+							</div>
+						</div>
+					</div>
                     <!-- Button trigger modal -->
                     <button type="button" class="wow fadeInUp btn section7-button" data-toggle="modal" data-target="#bride">
                         신부측 계좌번호 보기
@@ -450,17 +456,17 @@
                                 </div>
                                 <div class="modal-body section7-modal section7-modal-content">
                                     <div class="row">
-                                        <span class="label">신&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;부:</span>
+                                        <span class="label">신&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;부</span>
                                         <span class="bank-account" id="account1">신한 111111111111 (유연주)</span>
                                         <button class="copy-btn" onclick="copyToClipboard('account1')">복사하기</button>
                                     </div>
                                     <div class="row">
-                                        <span class="label">신부 아버지:</span>
+                                        <span class="label">신부아버지</span>
                                         <span class="bank-account" id="account2">신한 111111111111 (유중경)</span>
                                         <button class="copy-btn" onclick="copyToClipboard('account2')">복사하기</button>
                                     </div>
                                     <div class="row">
-                                        <span class="label">신부 어머니:</span>
+                                        <span class="label">신부어머니</span>
                                         <span class="bank-account" id="account3">신한 111111111111 (임민희)</span>
                                         <button class="copy-btn" onclick="copyToClipboard('account3')">복사하기</button>
                                     </div>
@@ -481,7 +487,8 @@
 		    	<div class="col text-center">
 				<h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">오시는 길</h2>
 				<div>
-					<h5 style="font-family: 'Noto Serif KR', serif;">호텔리츠컨벤션웨딩</h5>
+					<h5 style="font-family: 'Noto Serif KR', serif;">호텔리츠컨벤션웨딩 8F</h5>
+					<h5 style="font-family: 'Noto Serif KR', serif;">빌라 드 샬롯</h5>
 					<h6 style="font-family: 'Noto Serif KR', serif;">(경기도 수원시 팔달구 권광로134번길 46)</h6>
 				</div>
 			</div>

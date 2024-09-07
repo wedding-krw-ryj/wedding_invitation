@@ -10079,3 +10079,38 @@ body {
     left: 0;
     margin: 0px 15px 15px 15px;
 }
+
+/* 폰트와 기본 스타일 설정 */
+.modal-body {
+    font-family: Arial, sans-serif; /* 원하는 글씨체로 변경 */
+}
+
+.row {
+    display: flex;
+    align-items: center; /* 세로 정렬 */
+    margin-bottom: 10px;
+}
+
+.label {
+    flex: 3; /* 레이블의 폭을 가능한 한 넓게 설정 */
+    font-weight: bold;
+}
+
+.bank-info {
+    display: flex;
+    align-items: center; /* 수평 정렬 */
+    flex: 2; /* 계좌번호와 버튼의 폭을 조정 */
+}
+
+.bank-account {
+    margin-right: 10px; /* 버튼과 계좌번호 간격 조정 */
+}
+
+.copy-btn {
+    font-size: 14px; /* 버튼 폰트 크기 조정 */
+}
+
+/* 버튼과 계좌번호 사이의 공간 조정 */
+.bank-info .copy-btn {
+    margin-left: 10px;
+}
