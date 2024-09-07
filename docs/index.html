@@ -109,8 +109,11 @@
 		let daysLeft = Math.ceil(timeDifference / oneDay);
 		$("#d-day").html(daysLeft > 0 ? daysLeft : 0);
 	});
-
-
+	$(document).ready(function() {
+		$('.nav-link').on('click', function () {
+			$('.navbar-collapse').collapse('hide');
+		});
+	});
     </script>
 </head>
 
@@ -136,23 +139,20 @@
             </div>
         </div>
         <div class="ww-nav-bar sticky-top bg-light">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container">
-                    <button aria-controls="ww-navbarNav" aria-expanded="false" aria-label="Toggle navigation"
-                            class="navbar-toggler"
-                            data-target="#ww-navbarNav" data-toggle="collapse" type="button">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse text-uppercase" id="ww-navbarNav">
-                        <ul class="navbar-nav ml-auto">
-							<li class="nav-item"><a class="nav-link smooth-scroll" href="#home">Home</a></li>
-							<li class="nav-item"><a class="nav-link smooth-scroll" href="#couple">Couple</a></li>
-							<li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
-							<li class="nav-item"><a class="nav-link smooth-scroll" href="#maps">Map</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="#"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ww-navbarNav" aria-controls="ww-navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse text-uppercase" id="ww-navbarNav">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link smooth-scroll" href="#home">Home</a></li>
+						<li class="nav-item"><a class="nav-link smooth-scroll" href="#couple">Couple</a></li>
+						<li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
+						<li class="nav-item"><a class="nav-link smooth-scroll" href="#maps">Map</a></li>
+					</ul>
+				</div>
+			</nav>
         </div>
         <div class="ww-section" id="couple">
             <div class="container">
@@ -335,7 +335,6 @@
                                         <path fill-rule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/>
                                     </svg>
                                 </button>
-                                &nbsp
                                 <button onclick="document.location.href='sms:010-2982-3351'" class="section4-sec3">
                                     <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-chat-dots-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
@@ -356,7 +355,6 @@
                                         <path fill-rule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/>
                                     </svg>
                                 </button>
-                                &nbsp
                                 <button onclick="document.location.href='sms:010-7602-3705'" class="section4-sec3-g">
                                     <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-chat-dots-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
@@ -477,11 +475,11 @@
                             </div>
                         </div>
                     </div>
-					<div id="maps"></div>
                     <br/><br/>
                 </div>
-			<div class="wow fadeInUp inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<!--			<div class="wow fadeInUp inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column"> -->
             <br/>
+		<div id="maps"></div>
 		<div class="form-group">
                     <div class="col-md-12">
 		    	<div class="col text-center">
