@@ -483,56 +483,57 @@
                 </div>
 <!--			<div class="wow fadeInUp inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column"> -->
             <br/>
-		<a id="maps"></a>
-		<div class="form-group">
-                    <div class="col-md-12">
-		    	<div class="col text-center">
-				<h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">오시는 길</h2>
-				<div>
-					<h5 style="font-family: 'Noto Serif KR', serif;">호텔리츠컨벤션웨딩 8F</h5>
-					<h5 style="font-family: 'Noto Serif KR', serif;">빌라 드 샬롯</h5>
-					<h6 style="font-family: 'Noto Serif KR', serif;">(경기도 수원시 팔달구 권광로134번길 46)</h6>
+		<div id="maps">
+			<div class="form-group">
+						<div class="col-md-12">
+					<div class="col text-center">
+					<h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">오시는 길</h2>
+					<div>
+						<h5 style="font-family: 'Noto Serif KR', serif;">호텔리츠컨벤션웨딩 8F</h5>
+						<h5 style="font-family: 'Noto Serif KR', serif;">빌라 드 샬롯</h5>
+						<h6 style="font-family: 'Noto Serif KR', serif;">(경기도 수원시 팔달구 권광로134번길 46)</h6>
+					</div>
 				</div>
+							<div class="my-3 text-center">
+								<a href="tmap://search?name=호텔리츠컨벤션웨딩">
+									<img alt="t-map" class="map-icon" id="t-map"
+										 src="images/map/t-map.png"/>
+								</a>
+								<a href="https://naver.me/FdsGQuoX">
+									<img alt="naver-map" class="map-icon" id="naver-map"
+										 src="images/map/naver-map.png"/>
+								</a>
+								<a href="https://kko.to/rzrhbWCr_z">
+									<img alt="kakao-map" class="map-icon" id="kakao-map"
+										 src="images/map/kakao-map.png"/>
+								</a>
+								<a href="https://maps.app.goo.gl/UYYwxp16tJJkPjnd6">
+									<img alt="google-map" class="map-icon" id="google-map"
+										 src="images/map/google-map.png"/>
+								</a>
+							</div>
+							<div class="col text-center">
+								<label style="font-family: 'Noto Serif KR', serif; font-size: 15px;">
+									수원시청역 2번 출구 도보 5분
+								</label>
+							</div>
+				<!-- * 카카오맵 - 지도퍼가기 -->
+				<!-- 1. 지도 노드 -->
+				<div id="daumRoughmapContainer1719414228312" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%"></div>
+				<!--
+					2. 설치 스크립트
+					* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+				-->
+				<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+				<!-- 3. 실행 스크립트 -->
+				<script charset="UTF-8">
+					new daum.roughmap.Lander({
+						"timestamp" : "1719414228312",
+						"key" : "2jtmd",
+						"mapHeight" : "360"
+					}).render();
+				</script>
 			</div>
-                        <div class="my-3 text-center">
-                            <a href="tmap://search?name=호텔리츠컨벤션웨딩">
-                                <img alt="t-map" class="map-icon" id="t-map"
-                                     src="images/map/t-map.png"/>
-                            </a>
-                            <a href="https://naver.me/FdsGQuoX">
-                                <img alt="naver-map" class="map-icon" id="naver-map"
-                                     src="images/map/naver-map.png"/>
-                            </a>
-                            <a href="https://kko.to/rzrhbWCr_z">
-                                <img alt="kakao-map" class="map-icon" id="kakao-map"
-                                     src="images/map/kakao-map.png"/>
-                            </a>
-                            <a href="https://maps.app.goo.gl/UYYwxp16tJJkPjnd6">
-                                <img alt="google-map" class="map-icon" id="google-map"
-                                     src="images/map/google-map.png"/>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <label style="font-family: 'Noto Serif KR', serif; font-size: 15px;">
-                                수원시청역 2번 출구 도보 5분
-                            </label>
-                        </div>
-			<!-- * 카카오맵 - 지도퍼가기 -->
-			<!-- 1. 지도 노드 -->
-			<div id="daumRoughmapContainer1719414228312" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%"></div>
-			<!--
-				2. 설치 스크립트
-				* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-			-->
-			<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-			<!-- 3. 실행 스크립트 -->
-			<script charset="UTF-8">
-				new daum.roughmap.Lander({
-					"timestamp" : "1719414228312",
-					"key" : "2jtmd",
-					"mapHeight" : "360"
-				}).render();
-			</script>
 		</div>
 	</div>
 	<footer class="pt-5 text-muted text-center text-small section8">
