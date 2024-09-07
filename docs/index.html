@@ -101,17 +101,14 @@
 	);
 	wow.init();
 
-    	$(document).ready(function() {
-            let date = new Date(2024, 11, 30);
-            let currentDate = new Date();
-
-            let result = date - currentDate;
-            let misec = 24 * 60 * 60 * 1000;
-
-            result = (result <= 0)? 0 : (parseInt(result / misec) + 1);
-
-            $("#d-day").html(result);
-        });
+	$(document).ready(function() {
+		let endDate = new Date(2024, 10, 30);
+		let currentDate = new Date();
+		let timeDifference = endDate - currentDate;
+		let oneDay = 24 * 60 * 60 * 1000;
+		let daysLeft = Math.ceil(timeDifference / oneDay);
+		$("#d-day").html(daysLeft > 0 ? daysLeft : 0);
+	});
 
 
     </script>
@@ -133,7 +130,7 @@
                     <p class="h2 mt-5 ww-title"
                        style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
                         <b style="font-size:1.4em;">2024. 11. 30. SAT PM 12:00</b>
-                        <br>경기 수원 인계동 호텔리츠컨벤션웨딩
+                        <br>경기 수원 인계동 호텔리츠컨벤션웨딩 8F 빌라 드 샬롯
                     </p>
                 </div>
             </div>
@@ -148,10 +145,10 @@
                     </button>
                     <div class="collapse navbar-collapse text-uppercase" id="ww-navbarNav">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#couple">Couple</a></li>
-                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#events">Events</a></li>
-                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
+							<li class="nav-item"><a class="nav-link smooth-scroll" href="#home">Home</a></li>
+							<li class="nav-item"><a class="nav-link smooth-scroll" href="#couple" data-toggle="collapse" data-target=".navbar-collapse.show">Couple</a></li>
+							<li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery" data-toggle="collapse" data-target=".navbar-collapse.show">Gallery</a></li>
+							<li class="nav-item"><a class="nav-link smooth-scroll" href="#maps" data-toggle="collapse" data-target=".navbar-collapse.show">Map</a></li>
                         </ul>
                     </div>
                 </div>
@@ -478,6 +475,7 @@
                 </div>
 			<div class="wow fadeInUp inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
             <br/>
+		<div id="maps"></div>
 		<div class="form-group">
                     <div class="col-md-12">
 		    	<div class="col text-center">
@@ -528,94 +526,6 @@
 			</script>
 		</div>
 	</div>
-	<!--    위에 추가
-			<div class="wow fadeInUp  inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-				<br/>
-				<p class="section5-title section5-main text-center">예식 일시</p>
-				<p class="section5-title section5-sub text-center" style="margin-top: 0;">11월 30일 · 토요일 · 오후 12:00</p>
-				<table class="wow fadeInUp section5-title section5-table text-center">
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="sun">S</td>
-						<td>M</td>
-						<td>T</td>
-						<td>W</td>
-						<td>T</td>
-						<td>F</td>
-						<td>S</td>
-					</tr>
-					<tr>
-						<td class="sun"></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>1</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td class="sun">3</td>
-						<td>4</td>
-						<td>5</td>
-						<td>6</td>
-						<td>7</td>
-						<td>8</td>
-						<td>9</td>
-					</tr>
-					<tr>
-						<td class="sun">10</td>
-						<td>11</td>
-						<td>12</td>
-						<td>13</td>
-						<td>14</td>
-						<td>15</td>
-						<td>16</td>
-					</tr>
-					<tr>
-						<td class="sun">17</td>
-						<td>18</td>
-						<td>19</td>
-						<td>20</td>
-						<td>21</td>
-						<td>22</td>
-						<td>23</td>
-					</tr>
-					<tr>
-						<td class="sun">24</td>
-						<td>25</td>
-						<td>26</td>
-						<td>27</td>
-						<td>28</td>
-						<td>29</td>
-						<td class="check">30</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</table>
-				<p class="wow fadeInUp section5-title section5-sub text-center" style="margin-top:1.3em">련우 ❤️ 연주 결혼식이 <span id="d-day"></span>일 남았습니다.</p>
-				<br/><br/>
-            </div>
-        </div>
--->	
-<!-- Go to TOP dutton
-    <div class="bottom_right"><i class="fa fa-arrow-up fa-2x" id="go-to-top"></i>
-    </div>
--->
 	<footer class="pt-5 text-muted text-center text-small section8">
 		<br/><br/><br/><br/>
 		<p class="mb-1">© 2024-11-30 Ryenwoo, Yeonju</p>
