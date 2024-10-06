@@ -10085,6 +10085,22 @@ body {
     font-family: Arial, sans-serif; /* 원하는 글씨체로 변경 */
 }
 
+@font-face {
+    font-family: 'Laundry Gothic Bold';
+    src: url('../font/laundrygothic_Bold.woff') format('woff'),
+	     url('../font/laundrygothic_Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Laundry Gothic';
+    src: url('../font/laundrygothic_Regular.woff') format('woff'),
+	     url('../font/laundrygothic_Regular.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 .row {
     display: flex;
     align-items: center; /* 세로 정렬 */

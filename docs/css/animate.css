@@ -44,8 +44,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 @font-face {
-  font-family: 'NanumMyeongjo-b';
-  src: url('../font/NanumMyeongjo-Bold.ttf') format('truetype');
+  font-family: 'laundrygothic_B';
+  src: url('../font/laundrygothic_Bold.ttf') format('truetype');
 }
 
 @keyframes bounce {
@@ -2780,13 +2780,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .section7-main {
-  font-family: NanumMyeongjo-b;
+  font-family: laundrygothic_B;
   line-height: 1.4em;
   font-size: 1.4rem;
 }
 
 .section7-button {
-  font-family: NanumMyeongjo-b;
+  font-family: laundrygothic_B;
   font-size: 1.2rem;
   background-color: #CC9999;
   color: #fff;
@@ -2847,13 +2847,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .section4-sec2 {
-  font-family: NanumMyeongjo-b;
+  font-family: laundrygothic_B;
   line-height: 1.5em;
   font-size: 1.35rem;
 }
 
 .section4-sec3 {
-  font-family: NanumMyeongjo-b;
+  font-family: laundrygothic_B;
   line-height: 1.5em;
   font-size: 1.35rem;
   background: none;
@@ -2862,7 +2862,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .section4-sec3-g {
-  font-family: NanumMyeongjo-b;
+  font-family: laundrygothic_B;
   line-height: 1.5em;
   font-size: 1.35rem;
   background: none;
@@ -2945,13 +2945,13 @@ h2 {
 }
 
 .section4-sec2 {
-  font-family: NanumMyeongjo-b;
+  font-family: laundrygothic_B;
   line-height: 1.5em;
   font-size: 1.35rem;
 }
 
 .section4-sec3 {
-  font-family: NanumMyeongjo-b;
+  font-family: laundrygothic_B;
   line-height: 1.5em;
   font-size: 1.35rem;
   background: none;
@@ -2960,7 +2960,7 @@ h2 {
 }
 
 .section4-sec3-g {
-  font-family: NanumMyeongjo-b;
+  font-family: laundrygothic_B;
   line-height: 1.5em;
   font-size: 1.35rem;
   background: none;
