@@ -33,57 +33,8 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	
-		    <!-- TEST -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&amp;display=swap" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="css/swiper.min.css">
-<script src="js/swiper.js"></script>
-	
         <style>
-*{margin: 0;padding: 0;font-family: 'Noto Sans KR', sans-serif;box-sizing: border-box;box-sizing: border-box;}
-ul,ol,li {list-style: none;}
-.blog { display: flex; justify-content: center; align-items: center; position: fixed; bottom:50px; left: 50%; width: 160px; height: 46px; background-size: 300% 100%; border-radius:23px; font-size: 16px; font-weight: 500; color: #fff; z-index: 100; background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376); transform: translate(-50%,0); text-decoration: none; transition: all .4s ease-in-out; } 
-.blog:hover { background-position: 100% 0; box-shadow: 0 2px 8px 0 rgba(45, 54, 65, 0.65); } 
 
-.gallery {overflow: hidden;position: relative;max-width: 900px;width: auto; height:auto;}
-.gallery .list .inner {position: relative;}
-.gallery .list .slide_list > li {display: flex;justify-content: center;align-items: center;max-height: 900px;height:auto;font-size: 48px;opacity: 0 !important;background: none;}
-.gallery .list .slide_list > li.swiper-slide-active {opacity: 1 !important;} 
-.gallery .list .btn {position: absolute;top: 50%;width: 35px;height: 35px;background:url('images/arrow.png') center center no-repeat;background-size: contain;text-indent: -999em;z-index: 1;}
-.gallery .list .btn.btn_prev {left: 10px;transform:translate(0,-50%) rotateY(180deg);}
-.gallery .list .btn.btn_next {right: 10px;transform: translate(0,-50%) ;}
-
-.gallery .thumbs {margin-top: 20px;}
-.gallery .thumbs .slide_list > li {display: flex;justify-content: center;align-items: center;position: relative;height:100px;width:auto;font-size: 24px;cursor: pointer;background: none;}
-.gallery .thumbs .slide_list > li.swiper-slide-thumb-active:before {content:'';position: absolute;top: 0;right: 0;bottom: 0;left: 0;border: 4px solid #000;z-index: 1;}
-.bigPictureWrapper {
-	position: fixed;
-	display: none;
-	justify-content: center;
-	align-items: center;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background:rgba(0,0,0,0.8); 
-	z-index: 1000;
-}
-.bigPicture {
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	max-width: 100%;
-	max-height: auto;
-}
-.bigPicture img {
-	width: auto;
-	height: auto;
-	max-width: 100%;
-	max-height: 100%;
-}
         </style>
     
         <!-- Custom styles for this template -->
@@ -163,109 +114,6 @@ ul,ol,li {list-style: none;}
 			$('.navbar-collapse').collapse('hide');
 		});
 	});
-	
-	$(window).on('load', function () {
-		gallery();
-	});
-
-	function gallery() {
-	let list = undefined;
-	let thumbs = undefined;
-	const slideNum = $('.gallery .list .swiper-slide').length; // 슬라이드 총 개수
-	let slideInx = 0; // 현재 슬라이드 index
-	let viewNum = 0;
-	let loopChk = true;
-
-	// 디바이스 체크
-	let oldWChk = window.innerWidth > 767 ? 'pc' : 'mo';
-	sliderAct();
-
-	$(window).on('resize', function () {
-		const newWChk = window.innerWidth > 767 ? 'pc' : 'mo';
-		if (newWChk !== oldWChk) {
-			oldWChk = newWChk;
-			sliderAct();
-		}
-	});
-
-	// 슬라이드 실행
-	function sliderAct() {
-		// 슬라이드 초기화
-		[list, thumbs].forEach(item => item && item.destroy());
-
-		// slidesPerView 옵션 설정
-		viewNum = oldWChk === 'pc' ? 5 : 3;
-		// loop 옵션 체크
-		loopChk = slideNum > viewNum;
-
-		// 갤러리 썸네일
-		thumbs = new Swiper(".gallery .thumbs", {
-			spaceBetween: 10,
-			slidesPerView: viewNum,
-			loopedSlides: viewNum,
-			loop: loopChk,
-			watchSlidesVisibility: true,
-			watchSlidesProgress: true,
-		});
-
-		// 메인 슬라이드
-		list = new Swiper(".gallery .list .inner", {
-			initialSlide: slideInx,
-			loopedSlides: viewNum,
-			loop: loopChk,
-			effect: "fade",
-			navigation: {
-				nextEl: ".gallery .btn_next",
-				prevEl: ".gallery .btn_prev",
-			},
-			on: {
-				activeIndexChange: function () {
-					slideInx = this.realIndex; // 현재 슬라이드 index 갱신
-				}
-			},
-			thumbs: {
-				swiper: thumbs,
-			},
-		});
-	}
-	}
-
-	$(document).ready(function () {
-	$(document).on("click", ".gallery-image", function(){
-		var path = $(this).attr('src')
-		showImage(path);
-	});//end click event
-
-	function showImage(fileCallPath){
-		$(".bigPictureWrapper").css("display","flex").show();
-		$(".bigPicture").html("<img src='"+fileCallPath+"' >");
-	}//end fileCallPath
-
-	$(".bigPictureWrapper").on("click", function(){
-		$(this).hide();
-	});
-	});
-	
-	        // JavaScript 코드를 추가하여 부드러운 스크롤과 네비게이션 바 닫기 기능을 구현합니다.
-        document.querySelectorAll('.navbar-nav a').forEach(function(element) {
-            element.addEventListener('click', function(event) {
-                event.preventDefault(); // 링크 클릭 시 기본 동작(페이지 이동)을 막습니다.
-                var targetId = element.getAttribute('href').substring(1); // 링크의 href 속성에서 '#'을 제외한 부분을 가져옵니다.
-                var targetSection = document.getElementById(targetId); // 해당 섹션의 요소를 가져옵니다.
-                if (targetSection) {
-                    // 해당 섹션으로 스크롤합니다.
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    // 네비게이션 바를 닫습니다.
-                    var navbarCollapse = document.querySelector('.navbar-collapse');
-                    if (navbarCollapse.classList.contains('show')) {
-                        navbarCollapse.classList.remove('show');
-                    }
-                }
-            });
-        });
-	
     </script>
 </head>
 
@@ -311,7 +159,7 @@ ul,ol,li {list-style: none;}
 		<a id="couples"></a>
         <div class="ww-section" id="couple">
             <div class="container">
-                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Laundry Gothic Bold', serif;">신랑 & 신부</h2>
+                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">신랑 & 신부</h2>
                 <div class="row text-center">
                     <div class="col-md-6">
                         <div class="mt-3">
@@ -331,19 +179,19 @@ ul,ol,li {list-style: none;}
             </div>
         </div>
 		<div class="ww-section">
-			<p class="section5-title section5-sub text-center" style="font-family: 'Laundry Gothic', serif;margin-top: 0;line-height: 0.5;">저절로 웃음이 났다.</p>
-			<p class="section5-title section5-sub text-center" style="font-family: 'Laundry Gothic', serif;margin-top: 0;line-height: 0.5;">웃는 남자를 보고 여자도 웃었다.</p>
-			<p class="section5-title section5-sub text-center" style="font-family: 'Laundry Gothic', serif;margin-top: 0;line-height: 0.5;">마음에 꽃이 피는 것 같았다.</p>
-			<p class="section5-title section5-sub text-center" style="font-family: 'Laundry Gothic', serif;margin-top: 0;line-height: 0.5;">정말로 봄이었다.</p>
+			<p class="section5-title section5-sub text-center" style="margin-top: 0;line-height: 0.5;">저절로 웃음이 났다.</p>
+			<p class="section5-title section5-sub text-center" style="margin-top: 0;line-height: 0.5;">웃는 남자를 보고 여자도 웃었다.</p>
+			<p class="section5-title section5-sub text-center" style="margin-top: 0;line-height: 0.5;">마음에 꽃이 피는 것 같았다.</p>
+			<p class="section5-title section5-sub text-center" style="margin-top: 0;line-height: 0.5;">정말로 봄이었다.</p>
 			<p class="section5-title section5-sub text-center" style="margin-top: 0;line-height: 0.1;font-size:0.6em;">정현주 <다시 사랑> 중에서</p>
 			<p>  </p>
-			<p class="section5-title section5-sub text-center" style="font-family: 'Laundry Gothic', serif;margin-top: 0;line-height: 2.5;">앞으로 맞이할 저희의 봄날을 축복해 주시면</p>
-			<p class="section5-title section5-sub text-center" style="font-family: 'Laundry Gothic', serif;margin-top: 0;line-height: 0;">감사하겠습니다.</p>
+			<p class="section5-title section5-sub text-center" style="margin-top: 0;line-height: 2.5;">앞으로 맞이할 저희의 봄날을 축복해 주시면</p>
+			<p class="section5-title section5-sub text-center" style="margin-top: 0;line-height: 0;">감사하겠습니다.</p>
 		</div>
 		<div class="ww-section wow fadeInUp  inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 				<br/>
-				<p class="section5-title section5-main text-center" style="font-family: 'Laundry Gothic Bold', serif;">예식 일시</p>
-				<p class="section5-title section5-sub text-center" style="font-family: 'Laundry Gothic', serif;margin-top: 0;">11월 30일 · 토요일 · 오후 12:00</p>
+				<p class="section5-title section5-main text-center">예식 일시</p>
+				<p class="section5-title section5-sub text-center" style="margin-top: 0;">11월 30일 · 토요일 · 오후 12:00</p>
 				<table class="wow fadeInUp section5-title section5-table text-center">
 					<tr>
 						<td></td>
@@ -418,141 +266,106 @@ ul,ol,li {list-style: none;}
 						<td></td>
 					</tr>
 				</table>
-				<p class="wow fadeInUp section5-title section5-sub text-center " style="font-family: 'Laundry Gothic', serif;margin-top:1.3em">련우 ❤️ 연주 결혼식이 <span id="d-day"></span>일 남았습니다.</p>
+				<p class="wow fadeInUp section5-title section5-sub text-center " style="margin-top:1.3em">련우 ❤️ 연주 결혼식이 <span id="d-day"></span>일 남았습니다.</p>
 				</br></br>
         </div>
 		<a id="gallerys"></a>
-      <div class="ww-section" id="gallery">
-		<div class="container"><h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Laundry Gothic Bold', serif;">포토 갤러리</h2></div>
-                <div class="gallery_container">
-						<div class="gallery h1 text-center pb-3 ww-title">
-							<!-- 메인 슬라이드 -->
-							<div class="list">
-								<div class="inner">
-								<ul class="swiper-wrapper slide_list">
-									<li class="swiper-slide">
-										<img src="images/pic1.jpg" alt="Image 1" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic2.jpg" alt="Image 2" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic3.jpg" alt="Image 3" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic4.jpg" alt="Image 4" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>            
-									<li class="swiper-slide">
-										<img src="images/pic5.jpg" alt="Image 5" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic6.jpg" alt="Image 6" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic7.jpg" alt="Image 7" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic8.jpg" alt="Image 8" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic9.jpg" alt="Image 9" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic10.jpg" alt="Image 10" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic11.jpg" alt="Image 10" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic12.jpg" alt="Image 10" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic13.jpg" alt="Image 10" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic14.jpg" alt="Image 10" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic15.jpg" alt="Image 10" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-								</ul>
-								<span class="btn btn_prev">이전</span>
-								<span class="btn btn_next">다음</span>
-								</div>
-							</div>
-
-							<!-- 갤러리 썸네일 -->
-							<div class="thumbs">
-								<ul class="swiper-wrapper slide_list">
-									<li class="swiper-slide">
-										<img src="images/pic1.jpg" alt="thumbs 1" class="gallery-image" style="max-width: auto; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic2.jpg" alt="thumbs 2" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic3.jpg" alt="thumbs 3" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic4.jpg" alt="thumbs 4" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>            
-									<li class="swiper-slide">
-										<img src="images/pic5.jpg" alt="thumbs 5" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic6.jpg" alt="thumbs 6" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic7.jpg" alt="thumbs 7" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic8.jpg" alt="thumbs 8" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic9.jpg" alt="thumbs 9" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic10.jpg" alt="thumbs 10" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic11.jpg" alt="thumbs 11" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic12.jpg" alt="thumbs 12" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic13.jpg" alt="thumbs 13" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic14.jpg" alt="thumbs 14" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-									<li class="swiper-slide">
-										<img src="images/pic15.jpg" alt="thumbs 15" class="gallery-image" style="max-width: 100%; height: 100%; object-fit: cover;">
-									</li>
-								</ul>
-							</div>
-						</div>
-
-						<div class='bigPictureWrapper'>
-							<div class='bigPicture'></div>	   
-						</div>
-
-						<script>
-						</script>
+        <div class="ww-section" id="gallery">
+            <div class="ww-photo-gallery">
+                <div class="container">
+                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">포토 갤러리</h2>
+                    <div class="ww-gallery">
+                        <div class="card-columns">
+                            <div class="card" data-groups="[&quot;party&quot;,&quot;wedding&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 1" class="img-fluid" src="images/pic1.jpg"/>
+                                </a>
+                            </div>
+                            <div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 2" class="img-fluid" src="images/pic2.jpg"/>
+                                </a>
+                            </div>
+                            <div class="card" data-groups="[&quot;party&quot;,&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 3" class="img-fluid" src="images/pic3.jpg"/>
+                                </a>
+                            </div>
+                            <div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 4" class="img-fluid" src="images/pic4.jpg"/>
+                                </a>
+                            </div>
+                            <div class="card"
+                                 data-groups="[&quot;wedding&quot;,&quot;ceremony&quot;,&quot;party&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 5" class="img-fluid" src="images/pic5.jpg"/>
+                                </a>
+                            </div>
+                            <div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 6" class="img-fluid" src="images/pic6.jpg"/>
+                                </a>
+                            </div>
+							<div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 7" class="img-fluid" src="images/pic7.jpg"/>
+                                </a>
+                            </div>
+							<div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 8" class="img-fluid" src="images/pic8.jpg"/>
+                                </a>
+                            </div>
+							<div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 9" class="img-fluid" src="images/pic9.jpg"/>
+                                </a>
+                            </div>
+							<div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 10" class="img-fluid" src="images/pic10.jpg"/>
+                                </a>
+                            </div>
+							<div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 11" class="img-fluid" src="images/pic11.jpg"/>
+                                </a>
+                            </div>
+							<div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 12" class="img-fluid" src="images/pic12.jpg"/>
+                                </a>
+                            </div>
+							<div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 13" class="img-fluid" src="images/pic13.jpg"/>
+                                </a>
+                            </div>
+							<div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 14" class="img-fluid" src="images/pic14.jpg"/>
+                                </a>
+                            </div>
+							<div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 15" class="img-fluid" src="images/pic15.jpg"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
         </div>
-
-
         <div class="ww-section">
             <div class="container">
 <!--연락처 & 계좌 번호-->
                 <div class="wow fadeInUp">
-					<hr class="cover-container" style="margin: 0 auto;"/>
                     <br/><br/>
                     <div class="container section4-title" style="text-align: center">
                         <div class="row">
                             <div class="col-6 section4-sec1-2">
-                                <span class="section4-sec1" style="font-family: 'Laundry Gothic', serif;">신랑</span>
+                                <span class="section4-sec1">신랑</span>
                                 &nbsp&nbsp&nbsp
                                 <span class="section4-sec2">강련우</span>
                             </div>
@@ -572,7 +385,7 @@ ul,ol,li {list-style: none;}
                         <br/><br/>
                         <div class="row">
                             <div class="col-6 section4-sec1-2">
-                                <span class="section4-sec1" style="font-family: 'Laundry Gothic', serif;">신부</span>
+                                <span class="section4-sec1">신부</span>
                                 &nbsp&nbsp&nbsp
                                 <span class="section4-sec2">유연주</span>
                             </div>
@@ -592,36 +405,36 @@ ul,ol,li {list-style: none;}
                         <br/>
                         <div class="row" style="margin-top:1rem; margin-bottom: 1rem">
                             <div class="col-6 section4-sec1-2">
-                                <span class="section4-sec1" style="font-family: 'Laundry Gothic', serif;">신랑측 혼주</span>
+                                <span class="section4-sec1">신랑측 혼주</span>
                             </div>
                             <div class="col section4-sec1-2">
-                                <span class="section4-sec1" style="font-family: 'Laundry Gothic', serif;">신부측 혼주</span>
+                                <span class="section4-sec1">신부측 혼주</span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6 section4-sec1-2">
-                                <span class="section4-sec1" style="font-family: 'Laundry Gothic', serif;">아버지</span>
+                                <span class="section4-sec1">아버지</span>
                                 &nbsp&nbsp&nbsp
                                 <span class="section4-sec2">강상구</span>
                                 <br/>
-                                <span class="section4-sec1" style="font-family: 'Laundry Gothic', serif;">어머니</span>
+                                <span class="section4-sec1">어머니</span>
                                 &nbsp&nbsp&nbsp
                                 <span class="section4-sec2">신순남</span>
                             </div>
                             <div class="col section4-sec1-2">
-                                <span class="section4-sec1" style="font-family: 'Laundry Gothic', serif;" >아버지</span>&nbsp&nbsp&nbsp<span class="section4-sec2">유중경</span>
+                                <span class="section4-sec1">아버지</span>&nbsp&nbsp&nbsp<span class="section4-sec2">유중경</span>
                                 <br/>
-                                <span class="section4-sec1" style="font-family: 'Laundry Gothic', serif;">어머니</span>&nbsp&nbsp&nbsp<span class="section4-sec2">임민희</span>
+                                <span class="section4-sec1">어머니</span>&nbsp&nbsp&nbsp<span class="section4-sec2">임민희</span>
                             </div>
                         </div>
                     </div>
                     <br/><br/>
                 </div>
 				<div id="maps"></div>
-                <hr class="cover-container" style="margin: 0 auto;"/>
+                <hr class="cover-container"/>
                 <div class="wow fadeInUp section7 inner cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
                     <br/><br/>
-                    <p class="wow fadeInUp section7-title section7-main" style="text-align: center !important;font-family: 'Laundry Gothic Bold';">신랑 신부에게 마음 전하기</p>
+                    <p class="wow fadeInUp section7-title section7-main" style="text-align: center !important;font-family: NanumMyeongjo-b;">신랑 신부에게 마음 전하기</p>
                     <br/>
                     <!-- Button trigger modal -->
                     <button type="button" class="wow fadeInUp btn section7-button" data-toggle="modal" data-target="#groom">
@@ -705,11 +518,11 @@ ul,ol,li {list-style: none;}
 			<div class="form-group">
 				<div class="col-md-12">
 					<div class="col text-center">
-					<h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Laundry Gothic Bold', serif;">오시는 길</h2>
+					<h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">오시는 길</h2>
 						<div>
-							<h5 style="font-family: 'Laundry Gothic', serif;">호텔리츠컨벤션웨딩 8F</h5>
-							<h5 style="font-family: 'Laundry Gothic', serif;">빌라 드 샬롯</h5>
-							<h6 style="font-family: 'Laundry Gothic', serif;">(경기도 수원시 팔달구 권광로134번길 46)</h6>
+							<h5 style="font-family: 'Noto Serif KR', serif;">호텔리츠컨벤션웨딩 8F</h5>
+							<h5 style="font-family: 'Noto Serif KR', serif;">빌라 드 샬롯</h5>
+							<h6 style="font-family: 'Noto Serif KR', serif;">(경기도 수원시 팔달구 권광로134번길 46)</h6>
 						</div>
 					</div>
 							<div class="my-3 text-center">
@@ -731,7 +544,7 @@ ul,ol,li {list-style: none;}
 								</a>
 							</div>
 							<div class="col text-center">
-								<label style="font-family: 'Laundry Gothic', serif; font-size: 15px;">
+								<label style="font-family: 'Noto Serif KR', serif; font-size: 15px;">
 									수원시청역 2번 출구 도보 5분
 								</label>
 							</div>
